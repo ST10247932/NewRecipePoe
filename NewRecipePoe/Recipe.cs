@@ -5,6 +5,7 @@ class Recipe
     private Ingredient[] ingredients;
     private string[] steps;
     // Gets recipe info from the user
+
     public void EnterRecipeDetails()
     {
         Console.Write("Enter the number of ingredients: ");
@@ -73,4 +74,5 @@ class Recipe
         ingredients = null;
         steps = null;
     }
+
 }

@@ -1,0 +1,7 @@
+C:\Users\lab_services_student\source\repos\NewRecipePoe\NewRecipePoe\obj\Debug\NewRecipePoe.csproj.AssemblyReference.cache
+C:\Users\lab_services_student\source\repos\NewRecipePoe\NewRecipePoe\obj\Debug\NewRecipePoe.csproj.CoreCompileInputs.cache
+C:\Users\lab_services_student\source\repos\NewRecipePoe\NewRecipePoe\bin\Debug\NewRecipePoe.exe.config
+C:\Users\lab_services_student\source\repos\NewRecipePoe\NewRecipePoe\bin\Debug\NewRecipePoe.exe
+C:\Users\lab_services_student\source\repos\NewRecipePoe\NewRecipePoe\bin\Debug\NewRecipePoe.pdb
+C:\Users\lab_services_student\source\repos\NewRecipePoe\NewRecipePoe\obj\Debug\NewRecipePoe.exe
+C:\Users\lab_services_student\source\repos\NewRecipePoe\NewRecipePoe\obj\Debug\NewRecipePoe.pdb

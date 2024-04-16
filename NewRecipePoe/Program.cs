@@ -9,6 +9,7 @@ class Program
         bool exit = false;
         while (!exit)
         {
+            // Clear the console to provide a clean interface
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\n======== Recipe Manager ========");
@@ -24,47 +25,59 @@ class Program
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write("\nEnter your choice: ");
             int choice;
-            if (!int.TryParse(Console.ReadLine(), out choice))
+
+            try
+            {
+                choice = int.Parse(Console.ReadLine());
+
+                switch (choice)
+                {
+                    case 1:
+                        recipe.EnterRecipeDetails();
+                        break;
+                    case 2:
+                        recipe.DisplayRecipe();
+                        break;
+                    case 3:
+                        double factor = GetScaleFactor();
+                        recipe.ScaleRecipe(factor);
+                        recipe.DisplayRecipe();
+                        break;
+                    case 4:
+                        recipe.ResetQuantities();
+                        break;
+                    case 5:
+                        recipe.ClearRecipe();
+                        break;
+                    case 6:
+                        exit = true;
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("\nExiting program. Have a nice day!");
+                        Console.ResetColor();
+                        break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("\nInvalid choice. Please enter a number between 1 and 6.");
+                        Console.ResetColor();
+                        break;
+                }
+            }
+            catch (FormatException)
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("\nInvalid choice. Please enter a number.");
                 Console.ResetColor();
-                ContinueMessage();
-                continue;
             }
-
-            switch (choice)
+            catch (OverflowException)
             {
-                case 1:
-                    recipe.EnterRecipeDetails();
-                    break;
-                case 2:
-                    recipe.DisplayRecipe();
-                    break;
-                case 3:
-                    double factor = GetScaleFactor();
-                    recipe.ScaleRecipe(factor);
-                    recipe.DisplayRecipe();
-                    break;
-                case 4:
-                    recipe.ResetQuantities();
-                    break;
-                case 5:
-                    recipe.ClearRecipe();
-                    break;
-                case 6:
-                    exit = true;
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("\nExiting program. Have a nice day!");
-                    Console.ResetColor();
-                    break;
-                default:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("\nInvalid choice. Please enter a number between 1 and 6.");
-                    Console.ResetColor();
-                    ContinueMessage();
-                    break;
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\nInvalid choice. The number is too large.");
+                Console.ResetColor();
             }
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\nPress any key to continue...");
+            Console.ResetColor();
+            Console.ReadKey();
         }
     }
 
@@ -121,14 +134,7 @@ class Program
             }
         }
 
-        return factor;
-    }
 
-    static void ContinueMessage()
-    {
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine("\nPress any key to continue...");
-        Console.ResetColor();
-        Console.ReadKey();
+        return factor;
     }
 }

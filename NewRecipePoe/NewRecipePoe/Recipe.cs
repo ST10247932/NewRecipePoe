@@ -1,9 +1,10 @@
 ﻿using System;
-
+//Recipe class
 class Recipe
 {
     private Ingredient[] ingredients;
     private string[] steps;
+    // Gets recipe info from the user
 
     public void EnterRecipeDetails()
     {
@@ -36,7 +37,7 @@ class Recipe
             steps[i] = Console.ReadLine();
         }
     }
-
+    // Displays the recipe 
     public void DisplayRecipe()
     {
         Console.WriteLine("\nRecipe Details:");
@@ -67,10 +68,11 @@ class Recipe
         // Reset quantities to original values
         EnterRecipeDetails();
     }
-
+     // Clear recipe
     public void ClearRecipe()
     {
         ingredients = null;
         steps = null;
     }
+
 }
